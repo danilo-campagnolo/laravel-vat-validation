@@ -22,6 +22,10 @@ jobs:
           - laravel: 11.*
             testbench: 9.*
         exclude:
+          # Laravel 10 requires PHP 8.1+
+          - laravel: 10.*
+            php: 8.0
+          # Laravel 11 requires PHP 8.2+
           - laravel: 11.*
             php: 8.0
           - laravel: 11.*
@@ -42,7 +46,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update --dev
           composer update --prefer-stable --prefer-dist --no-interaction
 
       - name: Execute tests
