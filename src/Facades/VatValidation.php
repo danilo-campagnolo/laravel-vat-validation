@@ -1,8 +1,7 @@
 <?php
 
-namespace LaravelVatValidation\VatValidation\Facades;
+namespace Danilopietrocampagnolo\LaravelVatValidation\Facades;
 
-use Danilopietrocampagnolo\LaravelVatValidation\Contracts\VatValidationInterface;
 use Illuminate\Support\Facades\Facade;
 
 /**
@@ -10,7 +9,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static array getValidationDetails(string $vatNumber, ?string $countryCode = null)
  * @method static bool isValidWithoutCache(string $vatNumber, ?string $countryCode = null)
  *
- * @see \LaravelVatValidation\VatValidation\VatValidationService
+ * @see \Danilopietrocampagnolo\LaravelVatValidation\VatValidationService
  */
 class VatValidation extends Facade
 {
