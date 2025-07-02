@@ -118,6 +118,38 @@ $request->validate([
     <span class="text-red-600">✗ Invalid VAT</span>
 @endif
 ```
+
+### Artisan Command
+
+The package provides an Artisan command for validating VAT numbers from the command line:
+
+```bash
+# Basic validation
+php artisan vat:validate NL123456789B01
+
+# With country code
+php artisan vat:validate 123456789B01 --country=NL
+
+# Skip cache for fresh validation
+php artisan vat:validate NL123456789B01 --no-cache
+
+# Example output:
+# ✓ VAT number is VALID
+# 
+# +------------------+------------------+
+# | Field            | Value            |
+# +------------------+------------------+
+# | Original VAT     | NL123456789B01   |
+# | Normalized VAT   | NL123456789B01   |
+# | Country Code     | NL               |
+# | Number Part      | 123456789B01     |
+# | Valid            | ✓ Yes            |
+# | Service Available| ✓ Yes            |
+# | From Cache       | ✗ No             |
+# | Error            | None             |
+# +------------------+------------------+
+```
+
 ## Supported Countries
 
 The package supports all EU member states' VAT numbers:
