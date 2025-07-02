@@ -16,6 +16,6 @@ class VatValidation extends Facade
 {
   protected static function getFacadeAccessor()
   {
-    return VatValidationInterface::class;
+    return 'vat-validation';
   }
 }

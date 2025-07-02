@@ -18,7 +18,8 @@ class VatValidationServiceProvider extends ServiceProvider
       'vat-validation'
     );
 
-    $this->app->bind(VatValidationInterface::class, function ($app) {
+    // Register as singleton with the key 'vat-validation'
+    $this->app->singleton('vat-validation', function ($app) {
       return new VatValidationService(
         $app['cache.store'],
         $app['log'],
@@ -26,7 +27,10 @@ class VatValidationServiceProvider extends ServiceProvider
       );
     });
 
-    $this->app->alias(VatValidationInterface::class, 'vat-validation');
+    // Also bind the interface
+    $this->app->bind(VatValidationInterface::class, function ($app) {
+      return $app->make('vat-validation');
+    });
   }
 
   /**
