@@ -7,7 +7,6 @@
 .DS_Store
 Thumbs.db
 composer.lock
-phpunit.xml
 .env
 coverage/
 build/
