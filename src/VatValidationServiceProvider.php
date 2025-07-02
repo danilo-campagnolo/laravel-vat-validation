@@ -2,6 +2,7 @@
 
 namespace Danilopietrocampagnolo\LaravelVatValidation;
 
+use Danilopietrocampagnolo\LaravelVatValidation\Console\Commands\ValidateVatCommand;
 use Danilopietrocampagnolo\LaravelVatValidation\Contracts\VatValidationInterface;
 use Illuminate\Support\ServiceProvider;
 
@@ -37,6 +38,10 @@ class VatValidationServiceProvider extends ServiceProvider
       $this->publishes([
         __DIR__ . '/config/vat-validation.php' => config_path('vat-validation.php'),
       ], 'vat-validation-config');
+
+      $this->commands([
+        ValidateVatCommand::class,
+      ]);
     }
 
     $this->registerValidationRules();

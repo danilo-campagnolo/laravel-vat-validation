@@ -2,8 +2,8 @@
 
 namespace LaravelVatValidation\VatValidation\Facades;
 
+use Danilopietrocampagnolo\LaravelVatValidation\Contracts\VatValidationInterface;
 use Illuminate\Support\Facades\Facade;
-use LaravelVatValidation\VatValidation\Contracts\VatValidationInterface;
 
 /**
  * @method static bool isValid(string $vatNumber, ?string $countryCode = null)
