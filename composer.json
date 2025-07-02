@@ -1,0 +1,47 @@
+{
+    "name": "danilopietrocampagnolo/laravel-vat-validation",
+    "description": "Laravel package for European VAT number validation using VIES service",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Danilopietrocampagnolo\\LaravelVatValidation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Danilopietrocampagnolo\\LaravelVatValidation\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "danilo-campagnolo",
+            "email": "danilocampagnolo.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/http": "^9.0|^10.0|^11.0",
+        "illuminate/cache": "^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "phpunit/phpunit": "^9.5|^10.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Danilopietrocampagnolo\\LaravelVatValidation\\VatValidationServiceProvider"
+            ],
+            "aliases": {
+                "VatValidation": "Danilopietrocampagnolo\\LaravelVatValidation\\Facades\\VatValidation"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "prefer-stable": true
+}
